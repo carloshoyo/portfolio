@@ -1,13 +1,11 @@
 @import "tailwindcss";
-
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap');
 
-
-
+@custom-variant dark (&:is(.dark *));
 
 @theme {
     --font-title: 'IBM Plex Serif', sans-serif;
@@ -15,4 +13,62 @@
     --font-price: system-ui;
     --font-stay-in: 'DM Serif Text';
     --font-code: 'Cascadia Code';
+    --color-jetblack: #2A3439;
+    --color-cool-steel-50: #eff4f6;
+    --color-cool-steel-100: #dee9ed;
+    --color-cool-steel-200: #bdd3db;
+    --color-cool-steel-300: #9cbdc9;
+    --color-cool-steel-400: #7ba7b7;
+    --color-cool-steel-500: #5b91a4;
+    --color-cool-steel-600: #487484;
+    --color-cool-steel-700: #365763;
+    --color-cool-steel-800: #243a42;
+    --color-cool-steel-900: #121d21;
+    --color-cool-steel-950: #0d1417;
+    --color-dark-text: #e5e5e5;
+}
+
+:root{
+    --color-estela: #f0d956;
+    --color-cabeza: #c4455e;
+}
+
+.dark{
+    --color-estela: #08203e;
+    --color-cabeza: #557c93;
+    
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.tarjeta-sobre-mi::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    pointer-events: none;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+}
+
+.tarjeta-sobre-mi:hover::after {
+    background-image: conic-gradient(from var(--angle),transparent 5%, var(--color-estela) 60%, var(--color-cabeza) 100%);
+    animation: 3s rotar-angulo linear infinite;
+}
+
+@keyframes rotar-angulo {
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
 }

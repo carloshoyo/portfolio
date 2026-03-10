@@ -15,7 +15,7 @@ export function PricingCard({ titleName, info, price, features, isRecommended, t
             <header>
                 <h1 className="text-lg font-semibold text-indigo-600 uppercase tracking-wider">{ titleName }</h1>
                 <h2>{ info }</h2>
-                <span className="text-4xl font-extrabold">{ price }$<span className="text-sm font-normal text-gray-500"> {text}</span></span>
+                <span className="text-4xl font-extrabold">{ price }$<span className="text-sm font-normal text-zinc-500"> {text}</span></span>
             </header>
             {features.map((feature) => (
                 <div>{ feature }</div>

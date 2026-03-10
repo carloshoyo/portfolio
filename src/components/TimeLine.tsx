@@ -6,24 +6,24 @@ export function TimeLine() {
         <div className="flex flex-col gap-8">
             <div className="flex flex-row items-center md:flex-col gap-4 justify-center text-center">
                 <div className="flex flex-row justify-center">
-                    <div className={`hidden md:block flex flex-col text-emerald-400 p-2 rounded-lg bg-black/25 ${isHoveredConstella ? 'opacity-100' : 'opacity-0'}`}>
+                    <div className={`hidden md:block flex flex-col text-[#FBEAEC] dark:text-[#BED0DA] p-2 rounded-lg bg-[#7E1B25] dark:bg-[#253741]/75 ${isHoveredConstella ? 'opacity-100' : 'opacity-0'}`}>
                         <a href="">
                             <p>Constella Intelligence</p>
                             <p>Becario.</p>
-                            <p>(Feb. 2026 - Ag. 2026)</p>
+                            <p>(Feb. 2026 - Act.)</p>
                         </a>
                     </div>
                 </div>
                 <div className="flex flex-col justify-center md:flex-row items-center">
                     <Line value={'h-50 w-0 md:h-0 md:w-75'}/>
-                    <div className='flex flex-col text-emerald-400 md:hidden'>
+                    <div className='flex flex-col text-[#FBEAEC] bg-[#7E1B25] dark:text-[#BED0DA] dark:bg-[#253741] md:hidden'>
                         <a href="">
                             <p>Constella Intelligence</p>
                             <p>Becario.</p>
                             <p>(Feb. 2026 - Ag. 2026)</p>
                         </a>
                     </div>                    
-                    <Circle color="border-emerald-800 bg-emerald-950" 
+                    <Circle color="border-[#7E1B25] bg-[#EDABB1] dark:border-[#BED0DA] dark:bg-[#253741]" 
                         onMouseEnter={() => { setIsHoveredConstella(true)}}
                         onMouseLeave={() => { setIsHoveredConstella(false)}}/>
                     <DiscLine value={'h-50 w-0 md:h-0 md:w-75'}/>

@@ -5,15 +5,38 @@ import { SobreMi } from './components/SobreMi'
 import { Experiencia } from './components/Experiencia';
 import { Proyectos } from './components/Proyectos';
 import { Tecnologias } from './components/Tecnologías';
+import { FondoEstrellas } from './components/FondoEstrellas';
+import { FondoSoleado } from './components/FondoSoleado';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 export function App() {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'dark';
+  });
+
+  useEffect(() => {
+    const htmlElement = document.documentElement;
+
+    if (theme === 'dark') {
+      htmlElement.classList.add('dark');
+    } else {
+      htmlElement.classList.remove('dark');
+    }
+
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark');
+  }
   return (
-    <main className='min-h-screen'>
-      {/* <div className="hidden md:absolute top-50 left-30 w-32 h-32 bg-teal-400 rounded-full  filter blur-[100px] opacity-50"></div>
-      <div className="hidden md:absolute top-100 left-150 w-32 h-32 bg-sky-400 rounded-full filter blur-[128px] opacity-50"></div>
-      <div className="hidden md:absolute top-50 left-200 w-32 h-32 bg-rose-200 rounded-full filter blur-[128px] opacity-50"></div> */}
+    <main className='min-h-screen transition-colors duration-500'>
+      <div className='fixed inset-0 -z-10 overflow-hidden pointer-events-none'>
+        {theme==='dark' ? <FondoEstrellas/> : <FondoSoleado/>}
+      </div>
       <>
-        <NavBar/>
+        <NavBar theme={ theme } toggleTheme={ toggleTheme }/>
         {/* <PricingTable/> */}
         <SobreMi/>  
         <Experiencia/>
