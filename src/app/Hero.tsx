@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import yo from '../assets/foto_11.webp'
+import yo192 from '../assets/foto_11-192.webp'
+import yo384 from '../assets/foto_11-384.webp'
+import yo576 from '../assets/foto_11-576.webp'
 import { FaGithub } from "react-icons/fa";
 import { GrLinkedin } from "react-icons/gr";
 import { IoIosMail } from "react-icons/io";
@@ -77,7 +79,16 @@ export function Hero () {
                     className='animate-rise w-36 h-36 lg:w-72 lg:h-72 rounded-full bg-[#CCD5AE]  flex justify-center overflow-hidden'
                     style={{ animationDelay: "0.30s" }}
                 >
-                    <img alt='Carlos Hoyo' className='lg:w-48 lg:h-72 md:w-24 md:h-36 rounded-b-4xl' src={yo} ></img>
+                    <img
+                        alt='Carlos Hoyo'
+                        className='w-24 h-36 lg:w-48 lg:h-72 rounded-b-4xl object-cover'
+                        src={yo384}
+                        srcSet={`${yo192} 192w, ${yo384} 384w, ${yo576} 576w`}
+                        sizes='(min-width: 1024px) 192px, 96px'
+                        width={192}
+                        height={288}
+                        fetchPriority='high'
+                    />
                 </div>
                 <div>
                     <p

@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
     <title>Carlos Hoyo</title>
+
+    <!-- La fuente del nombre: propia y en el primer viaje, sin depender de Google. -->
+    <link rel="preload" href="/fonts/rubik-mono-one-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Adelanta DNS + TLS con Google Fonts mientras se descarga el resto. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Montserrat:ital,wght@0,400..700;1,400..700&family=Quicksand:wght@300..700&display=swap"
+    />
     <!--
       Sincroniza el tema antes del primer pintado para evitar el flash blanco.
       Debe ser bloqueante: sin defer, sin async, sin type="module".

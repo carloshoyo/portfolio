@@ -1,28 +1,32 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
-
-
+/*
+ * Inter, Quicksand y Montserrat se cargan desde index.html en una única
+ * petición a Google Fonts, para que el preload scanner las descubra en el HTML
+ * en vez de tener que esperar a parsear este archivo.
+ *
+ * Rubik Mono One (el nombre del hero) va auto-hospedada y precargada: es lo
+ * primero que se ve, así que no puede depender de un dominio externo.
+ */
+@font-face {
+    font-family: 'Rubik Mono One';
+    font-style: normal;
+    font-weight: 400;
+    font-display: optional;
+    src: url('/fonts/rubik-mono-one-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                   U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+                   U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-    --font-title: 'IBM Plex Serif', sans-serif;
-    --font-hero-title: 'Rubik Mono One';
+    --font-hero-title: 'Rubik Mono One', ui-monospace, monospace;
     --font-sans: 'Quicksand', sans-serif;
     --font-price: system-ui;
-    --font-stay-in: 'DM Serif Text';
-    --font-code: 'Cascadia Code';
-    --font-montserrat: 'Montserrat';
-    --font-inter: 'Inter';
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-inter: 'Inter', system-ui, sans-serif;
     --color-jetblack: #2A3439;
     --color-cool-steel-50: #eff4f6;
     --color-cool-steel-100: #dee9ed;
