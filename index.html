@@ -4,9 +4,31 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./src/assets/LogoCHLBlanco.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
     <title>Carlos Hoyo</title>
+    <!--
+      Sincroniza el tema antes del primer pintado para evitar el flash blanco.
+      Debe ser bloqueante: sin defer, sin async, sin type="module".
+      Duplica a propósito la regla de src/theme.ts; si cambias una, cambia la otra.
+    -->
+    <script>
+      (function () {
+        var system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        var stored = null;
+        try {
+          var value = localStorage.getItem('theme');
+          if (value === 'dark' || value === 'light') stored = value;
+        } catch (e) { /* localStorage puede lanzar en modo incógnito */ }
+
+        var isMobile = window.matchMedia('(max-width: 767px)').matches;
+        var theme = isMobile ? system : (stored || system);
+
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+      })();
+    </script>
   </head>
-  <body class="bg-gradient-to-b from-rose-100 to-[#FD9BAB]  text-[#060F19] antialiased overflow-x-hidden dark:bg-[#1A1A1A] dark:bg-none dark:text-dark-text transition-colors duration-500">
+  <body class="bg-[#fffffa] font-inter text-[#363636] dark:text[#e5e5e5] antialiased overflow-x-hidden dark:bg-[#1A1A1A]
+              dark:text-dark-text transition-colors duration-500  md:px-0">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

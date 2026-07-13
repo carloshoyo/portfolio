@@ -1,75 +1,25 @@
-import { useState } from "react";
+import type { Trabajo } from "./Experiencia";
 
-export function TimeLine() {
-    const [isHoveredConstella, setIsHoveredConstella] = useState(false)
+export function TimeLine({jobs}: {jobs: Trabajo[]}) {
     return (
-        <div className="flex flex-col gap-8">
-            <div className="flex flex-row items-center md:flex-col gap-4 justify-center text-center">
-                <div className="flex flex-row justify-center">
-                    <div className={`hidden md:block flex flex-col text-[#FBEAEC] dark:text-[#BED0DA] p-2 rounded-lg bg-[#7E1B25] dark:bg-[#253741]/75 ${isHoveredConstella ? 'opacity-100' : 'opacity-0'}`}>
-                        <a href="">
-                            <p>Constella Intelligence</p>
-                            <p>Becario.</p>
-                            <p>(Feb. 2026 - Act.)</p>
-                        </a>
+        <section>
+            {jobs.map((job) => (
+                <div className="">
+                    <div className="border-l-2 border-[#9EB64C] dark:border-[#CCD5AE] px-7">
+                        <p className="font-semibold">
+                            {job.title}
+                        </p>
+                        <p className="text-sm text-[#979797]">
+                            {job.period}
+                        </p>
+                        <p className="text-[#777777]">
+                            {job.desc}
+                        </p>
+                    </div>
+                    <div className="border-l-2 border-dotted border-[#9EB64C] dark:border-[#CCD5AE] h-10">
                     </div>
                 </div>
-                <div className="flex flex-col justify-center md:flex-row items-center">
-                    <Line value={'h-50 w-0 md:h-0 md:w-75'}/>
-                    <div className='flex flex-col text-[#FBEAEC] bg-[#7E1B25] dark:text-[#BED0DA] dark:bg-[#253741] md:hidden'>
-                        <a href="">
-                            <p>Constella Intelligence</p>
-                            <p>Becario.</p>
-                            <p>(Feb. 2026 - Ag. 2026)</p>
-                        </a>
-                    </div>                    
-                    <Circle color="border-[#7E1B25] bg-[#EDABB1] dark:border-[#BED0DA] dark:bg-[#253741]" 
-                        onMouseEnter={() => { setIsHoveredConstella(true)}}
-                        onMouseLeave={() => { setIsHoveredConstella(false)}}/>
-                    <DiscLine value={'h-50 w-0 md:h-0 md:w-75'}/>
-                </div>
-            </div>
-        </div>
-    )
-
-}
-
-const classNameComponents = "flex flex-col";
-
-const Circle = ({
-        color,
-        onMouseEnter,
-        onMouseLeave
-    }: {
-        color:string;
-        onMouseEnter?: () => void;
-        onMouseLeave?: () => void;
-        }) => {
-    return (
-        <div className={classNameComponents}>
-            <a href="">
-                <div 
-                    className={`border-2 ${color} w-5 h-5 rounded-full`}
-                    onMouseEnter={onMouseEnter}
-                    onMouseLeave={onMouseLeave}>
-                </div>
-            </a>
-        </div>
-    )
-}
-
-const Line = ({value}:{value:string}) => {
-    return (
-        <div className={classNameComponents}>
-            <div className={`${value} border border-zinc-700`}></div>
-        </div>
-    )
-}
-
-const DiscLine = ({value}:{value:string}) => {
-    return (
-        <div className={classNameComponents}>
-            <div className={`${value} border border-dashed border-zinc-700`}></div>
-        </div>
+            ))}
+        </section>
     )
 }

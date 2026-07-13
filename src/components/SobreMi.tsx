@@ -3,7 +3,7 @@ import constella from '../assets/constella_logo.jfif'
 import { FaGithub } from "react-icons/fa";
 import { GrLinkedin } from "react-icons/gr";
 import { IoIosMail } from "react-icons/io";
-import { MoveRight } from 'lucide-react'
+import { MoveRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 
@@ -17,7 +17,7 @@ export function SobreMi() {
             <div className='flex flex-col justify-center backdrop-blur-md'>
                 <div className='flex flex-col items-center justify-center backdrop-blur-md md:flex-row gap-8'>
                     <img alt='Carlos Hoyo' className='w-16 h-24 object-cover object-center rounded-b-full' src={yo} ></img>
-                    <h1 className="font-sans text-5xl dark:text-white">Hola, soy Carlos!</h1>
+                    <h1 className="text-5xl font-montserrat font-medium dark:text-white">Hola, soy Carlos!</h1>
                 </div>
                 <aside className='flex flex-row gap-2 mt-4 items-center'>
                     <a href='https://constella.ai/'><img alt='Logo Constella Intelligence' src={constella} className='w-10 h-10 rounded-full'></img></a>
