@@ -1,4 +1,4 @@
-import type { Icono } from "./Tecnologías";
+import type { Icono } from "../app/Tecnologías";
 
 export function TechCard({title, tecs}: {title: string, tecs: Icono[]}) {
     return (

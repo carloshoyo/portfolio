@@ -1,4 +1,4 @@
-import type { Trabajo } from "./Experiencia";
+import type { Trabajo } from "../app/Experiencia";
 
 export function TimeLine({jobs}: {jobs: Trabajo[]}) {
     return (

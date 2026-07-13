@@ -1,16 +1,15 @@
 import { NavBar } from './components/Navbar'
 // import { PricingTable } from './components/PricingTable';
 // import { Footer } from './components/Footer'
-import { SobreMi } from './components/SobreMi'
-import { Experiencia } from './components/Experiencia';
-import { Proyectos } from './components/Proyectos';
-import { Tecnologias } from './components/Tecnologías';
+import { Experiencia } from './app/Experiencia';
+import { Proyectos } from './app/Proyectos';
+import { Tecnologias } from './app/Tecnologías';
 import { FondoEstrellas } from './components/FondoEstrellas';
 import { FondoSoleado } from './components/FondoSoleado';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { Hero } from './components/Hero';
-import { Footer } from './components/Footer';
+import { Hero } from './app/Hero';
+import { Footer } from './app/Footer';
 import { DARK_QUERY, MOBILE_QUERY, persistTheme, resolveTheme, type Theme } from './theme';
 
 export function App() {

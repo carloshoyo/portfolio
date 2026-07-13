@@ -1,5 +1,5 @@
 import { HiMiniCpuChip } from "react-icons/hi2";
-import { TechCard } from "./TechCard";
+import { TechCard } from "../components/TechCard";
 
 export interface Icono {
     nombre: string;

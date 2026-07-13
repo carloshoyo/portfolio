@@ -1,5 +1,5 @@
 import { BiSolidBriefcaseAlt2 } from "react-icons/bi";
-import { TimeLine } from "./TimeLine";
+import { TimeLine } from "../components/TimeLine";
 
 export interface Trabajo{
     title: string;

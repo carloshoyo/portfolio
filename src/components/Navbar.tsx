@@ -1,6 +1,5 @@
-import logo from '../assets/LogoCHLBlanco.svg'
-import { Italic, Menu, X } from 'lucide-react'
-import { useState } from 'react'
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion'
 import { MdOutlineDarkMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
@@ -33,13 +32,15 @@ export function NavBar({ theme, toggleTheme } : { theme: string, toggleTheme:() 
         }
     }
     return (
-        <nav className='hidden md:block bg-[#fffffa] p-2 md:p-0 text-[#363636] transition-colors duration-500 dark:bg-[#1A1A1A]/60 fixed top-0 w-full flex 
-                        border-b-1 border-[#979797]/30 dark:border-zinc-700 mb-8 backdrop-blur-md z-50 dark:text-[#e5e5e5]'>
-            <ul className='flex items-center justify-between w-full ml-2 '>
+        <nav className='hidden md:block bg-[#fffffa] md:p-0 text-[#363636] transition-colors 
+                        duration-500 dark:bg-[#1A1A1A]/60 fixed top-0 w-full flex border-b-1 
+                        border-[#979797]/30 dark:border-zinc-700 mb-8 backdrop-blur-md z-50 
+                        dark:text-[#e5e5e5] px-2'>
+            <ul className='flex items-center justify-between w-full px-2'>
                 <li className='flex items-center gap-8'>
                     <h1 className='lg:text-2xl font-montserrat font-semibold'>C<em>A</em>RLOS HOYO</h1>
                 </li>
-                <li className='hidden sm:flex flex-row mr-2 text-sm items-center'>
+                <li className='hidden sm:flex flex-row text-sm items-center'>
                     { barOptions.map((option) => (
                         <a key={option.name} href={option.href} className='group relative scroll-smooth font-semibold px-4 py-3 align-center hover:bg-[#CCD5AE]/30 dark:hover:bg-zinc-800/25 active:border-b border-cool-steel-800 dark:border-emerald-400 active:bg-zinc-700/25 active:duration-100 duration-300 justify-center'>
                             <div className='hidden absolute group-hover:flex bottom-0 left-0 right-0 w-full h-0.5 bg-gradient-to-r from-[#ccd5ae] to-[#ccd5ae] dark:bg-gradient-to-r dark:from-[#ccd5ae] dark:to-[#e9edc9]'></div>
