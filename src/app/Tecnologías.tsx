@@ -45,15 +45,16 @@ export function Tecnologias({ theme }: { theme: string }) {
                 { nombre: "Linux", ruta: "/linux.svg" },
                 { nombre: "Git", ruta: "/git.svg" },
                 { nombre: "GitHub", ruta: theme === 'light' ? "/GitHub_light.svg" : "/GitHub_dark.svg" },
+                { nombre: "PostgreSQL", ruta: "/postgresql.svg" },
             ]
         },
         {
             title: "Automation & AI",
             imgs: [
                 { nombre: "OpenClaw", ruta: "/openclaw.svg" },
-                { nombre: "Claude", ruta: "/claude-ai-icon.svg" },
-                { nombre: "Codex", ruta: theme === 'light' ? "/Codex_light.svg" : "/Codex_dark.svg" },
-                { nombre: "Gemini", ruta: "/gemini.svg" },
+                { nombre: "Claude Code", ruta: "/claude-ai-icon.svg" },
+                { nombre: "Codex CLI", ruta: theme === 'light' ? "/Codex_light.svg" : "/Codex_dark.svg" },
+                { nombre: "Gemini CLI", ruta: "/gemini.svg" },
             ]
         },
 

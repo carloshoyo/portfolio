@@ -8,10 +8,10 @@ import { MdLightMode } from "react-icons/md";
 
 export function NavBar({ theme, toggleTheme } : { theme: string, toggleTheme:() => void }) {
     const barOptions = [
-        {name:"Sobre mí", href: '#hero'},
-        {name:"Proyectos", href: '#proyectos'},
-        {name:"Experiencia", href: '#experiencia'},
-        {name:"Contacto", href: '#contcto'}
+        {name:"About me", href: '#hero'},
+        {name:"Projects", href: '#proyectos'},
+        {name:"Experience", href: '#experiencia'},
+        {name:"Contact", href: '#contcto'}
     ]
     const [isOpen, setIsOpen] = useState(false)
     const variants = {
