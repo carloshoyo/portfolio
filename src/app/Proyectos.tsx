@@ -1,13 +1,20 @@
 import { AiFillCode } from "react-icons/ai";
 import { ProjectCard } from "../components/ProjectCard";
 import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { PreviewProyecto } from "../components/PreviewProyecto";
 
-interface Proyecto {
+export interface Proyecto {
     id: string;
     theme: string;
     descripcion: string;
     logoClaro: string;
     logoOscuro: string;
+}
+
+export interface Stack {
+    icono: string;
+    nombre: string;
 }
 
 export function Proyectos({theme}: {theme: string}) {
@@ -16,12 +23,21 @@ export function Proyectos({theme}: {theme: string}) {
     const array_proyectos: Proyecto[] = [
         {
             id: 'stayin',
-            theme: {theme},
+            theme: theme,
             descripcion: "StayIn is a mobile flatmate-matching platform that pairs users based on lifestyle compatibility. It's built around a hybrid recommendation engine combining affinity scoring and bidirectional matching to surface the most compatible roommates.",
-            logoClaro='/stayin.svg',
-            logoOscuro='/stayindark.svg',
+            logoClaro:'/stayin.svg',
+            logoOscuro:'/stayindark.svg',
+        },
+    ];
+
+    const array_stack: Stack[] = [
+        {
+            icono: '',
+            nombre: ''
         }
     ];
+
+    const proyecto_abierto = array_proyectos.find(p => p.id === opened);
     
     return (
         <section id="proyectos" className="mb-16">
@@ -32,6 +48,7 @@ export function Proyectos({theme}: {theme: string}) {
             {array_proyectos.map((proyecto) => (
                 <ProjectCard
                     key={proyecto.id}
+                    id={proyecto.id}
                     theme={proyecto.theme}
                     descripcion={proyecto.descripcion}
                     logoClaro={proyecto.logoClaro}
@@ -39,19 +56,18 @@ export function Proyectos({theme}: {theme: string}) {
                     onClick={() => setIsOpened(proyecto.id)}
                 />
             ))}
-            {abierto ? (
-                <PreviewProyecto
-                    onClose={setIsOpened(null)}
-                    theme={proyecto.theme}
-                    descripcion={proyecto.descripcion}
-                    logoClaro={proyecto.logoClaro}
-                    logoOscuro={proyecto.logoOscuro}
-                    demo={}
-                    stack={}
-                />
-            ) : (
-                <></>
-            )}
+            <AnimatePresence>
+                
+                {proyecto_abierto && (
+                    <PreviewProyecto
+                        onClose={() => setIsOpened(null)}
+                        key={opened}
+                        id={proyecto_abierto.id}
+                        datos={proyecto_abierto}
+                    />
+                )}
+            </AnimatePresence>
+            
         </section>
     )
 }
