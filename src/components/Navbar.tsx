@@ -11,7 +11,7 @@ export function NavBar({ theme, toggleTheme } : { theme: string, toggleTheme:() 
         {name:"About me", href: '#hero'},
         {name:"Projects", href: '#proyectos'},
         {name:"Experience", href: '#experiencia'},
-        {name:"Contact", href: '#contcto'}
+        {name:"Technologies", href: '#techs'}
     ]
     const [isOpen, setIsOpen] = useState(false)
     const variants = {

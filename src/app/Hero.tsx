@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import yo192 from '../assets/foto_11-192.webp'
-import yo384 from '../assets/foto_11-384.webp'
-import yo576 from '../assets/foto_11-576.webp'
+import yo192 from '../assets/foto_11-192.webp';
+import yo384 from '../assets/foto_11-384.webp';
+import yo576 from '../assets/foto_11-576.webp';
+import yo from '/yo.webp';
 import { FaGithub } from "react-icons/fa";
 import { GrLinkedin } from "react-icons/gr";
 import { IoIosMail } from "react-icons/io";
@@ -72,19 +73,21 @@ export function Hero () {
                     >
                         @ Constella Intelligence
                     </p>
+                    <div className='animate-rise flex flex-row justify-center gap-5'>
+                        <img src="/spain-flag.svg" alt="Spain flag" title='Spanish Nationality' />
+                        <img src="/england-flag.svg" alt='England' title="English Nationality" />
+                    </div>
                 </div>
             </div>
             <div className='text-left items-center flex flex-col gap-4 w-72'>
                 <div 
-                    className='animate-rise w-36 h-36 lg:w-72 lg:h-72 rounded-full bg-[#CCD5AE]  flex justify-center overflow-hidden'
+                    className='animate-rise w-36 h-36 lg:w-72 lg:h-72 rounded-full bg-[#CCD5AE] dark:bg-[#CCD5AE]  flex justify-center overflow-hidden'
                     style={{ animationDelay: "0.30s" }}
                 >
                     <img
                         alt='Carlos Hoyo'
-                        className='w-24 h-36 lg:w-48 lg:h-72 rounded-b-4xl object-cover'
-                        src={yo384}
-                        srcSet={`${yo192} 192w, ${yo384} 384w, ${yo576} 576w`}
-                        sizes='(min-width: 1024px) 192px, 96px'
+                        className='w-full h-full object-cover object-[position:center_35%]'
+                        src={yo}
                         width={192}
                         height={288}
                         fetchPriority='high'

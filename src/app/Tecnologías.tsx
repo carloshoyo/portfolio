@@ -46,6 +46,7 @@ export function Tecnologias({ theme }: { theme: string }) {
                 { nombre: "Git", ruta: "/git.svg" },
                 { nombre: "GitHub", ruta: theme === 'light' ? "/GitHub_light.svg" : "/GitHub_dark.svg" },
                 { nombre: "PostgreSQL", ruta: "/postgresql.svg" },
+                { nombre: "FastAPI", ruta: "/fastapi.svg" },
             ]
         },
         {
@@ -61,10 +62,10 @@ export function Tecnologias({ theme }: { theme: string }) {
     ]
     return (
         <section>
-            <header className="flex flex-row gap-4 items-center md:mx-auto max-w-150 mb-4">
+            <header id="techs" className="flex flex-row gap-4 items-center md:mx-auto max-w-150 mb-4">
                 <HiMiniCpuChip className="w-7 h-7"/>
                 <h1 className="font-sans text-2xl">
-                    Tecnologías
+                    Technologies
                 </h1>
             </header>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:px-50">
