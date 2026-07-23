@@ -3,7 +3,7 @@ import { FiExternalLink } from "react-icons/fi";
 export function VisitSite() {
     return(
         <a 
-            href="Hero.tsx"
+            href=""
             className="w-full flex justify-end"
         >
             <div 
