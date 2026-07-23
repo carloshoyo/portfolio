@@ -1,7 +1,4 @@
 import { useEffect, useState } from 'react';
-import yo192 from '../assets/foto_11-192.webp';
-import yo384 from '../assets/foto_11-384.webp';
-import yo576 from '../assets/foto_11-576.webp';
 import yo from '/yo.webp';
 import { FaGithub } from "react-icons/fa";
 import { GrLinkedin } from "react-icons/gr";
