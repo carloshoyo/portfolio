@@ -68,6 +68,7 @@ export function Hero () {
                         className='animate-rise font-inter text-xs md:text-base lg:text-xl text-[#979797] font-light'
                         style={{ animationDelay: "0.55s" }}
                     >
+                        Open to work
                     </p>
                     <div className='animate-rise flex flex-row justify-center gap-5'>
                         <img src="/spain-flag.svg" alt="Spain flag" title='Spanish Nationality' />
