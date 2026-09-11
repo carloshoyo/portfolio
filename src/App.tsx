@@ -75,8 +75,18 @@ export function App() {
         {/* <SobreMi/> */}
         <Hero/>
         <Proyectos theme={ theme }/>
-        <SectionWithTimeLine title='Experience' points={jobs} icon={<BiSolidBriefcaseAlt2 className="w-7 h-7"/>}/>
-        <SectionWithTimeLine title='Education' points={education} icon={<FaGraduationCap className='w-7 h-7'/>}/>
+        <SectionWithTimeLine 
+          title='Experience' 
+          points={jobs} 
+          icon={<BiSolidBriefcaseAlt2 className="w-7 h-7"/>}
+          id='experiencia'
+        />
+        <SectionWithTimeLine 
+          title='Education' 
+          points={education} 
+          icon={<FaGraduationCap className='w-7 h-7'/>}
+          id='education'
+        />
         <Tecnologias theme={ theme }/>
       </div>
       <Footer/>
