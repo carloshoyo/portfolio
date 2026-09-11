@@ -1,6 +1,6 @@
-import type { Trabajo } from "../app/Experiencia";
+import type { Points } from "../app/SectionWithTimeLine";
 
-export function TimeLine({jobs}: {jobs: Trabajo[]}) {
+export function TimeLine({jobs}: {jobs: Points[]}) {
     return (
         <section>
             {jobs.map((job) => (
