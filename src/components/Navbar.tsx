@@ -40,6 +40,7 @@ export function NavBar({ theme, toggleTheme } : { theme: string, toggleTheme:() 
             <ul className='flex items-center justify-between w-full px-2'>
                 <li className='flex items-center gap-8'>
                     <h1 className='lg:text-2xl font-montserrat font-semibold'>C<em>A</em>RLOS HOYO</h1>
+                    {/* <img src='./src/assets/LogoCHLActualizado.svg' alt='Logo Carlos Hoyo' className='h-10 w-10'/> */}
                 </li>
                 <li className='hidden sm:flex flex-row text-sm items-center'>
                     { barOptions.map((option) => (

@@ -73,8 +73,11 @@ export function PreviewProyecto({onClose, datos, stack}: {onClose: () => void, d
                         {datos.descripcion}
                     </p>
                 </motion.div>
-                <div className="w-full flex justify-end">
-                    <VisitSite/>
+                <div className="w-full flex flex-row justify-end">
+                    <div className="flex flex-row justify-end gap-4">
+                        <VisitSite text1="GitHub repo" text2="GitHub repo" href="https://github.com/carloshoyo/portfolio"/>
+                        <VisitSite text1="Visit site" text2="Coming soon" href=""/>
+                    </div>
                 </div>
                 <motion.div 
                     className="flex flex-col gap-8"
